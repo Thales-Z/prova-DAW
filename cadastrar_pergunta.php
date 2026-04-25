@@ -1,21 +1,21 @@
 <?php
-// 1. Verifica se o formulário foi enviado
+
 if (isset($_POST['pergunta']) && $_POST['pergunta'] != "") {
     
-    // 2. Recebe os dados do formulário
-    $id = time(); // Cria um ID único usando a hora atual (ajuda na hora de excluir/editar)
-    $tipo = "multipla"; // Define o tipo da pergunta
+    // Recebe os dados do formulário
+    $id = time(); 
+    $tipo = "multipla"; //
     $pergunta = $_POST['pergunta'];
     $opA = $_POST['opA'];
     $opB = $_POST['opB'];
     $opC = $_POST['opC'];
     $opD = $_POST['opD'];
-    $correta = $_POST['correta']; // Recebe qual letra (A, B, C ou D) é a certa
+    $correta = $_POST['correta']; 
 
-    // 3. Monta a linha com todos os dados separados por |
+    
     $linha = $id . "|" . $tipo . "|" . $pergunta . "|" . $opA . "|" . $opB . "|" . $opC . "|" . $opD . "|" . $correta . PHP_EOL;
     
-    // 4. Salva no arquivo perguntas.txt
+    //  Salva no arquivo perguntas.txt
     file_put_contents('perguntas.txt', $linha, FILE_APPEND);
     
     echo "<b>Pergunta criada com sucesso!</b><hr>";
