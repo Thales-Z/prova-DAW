@@ -5,11 +5,11 @@ if (isset($_POST['nome']) && $_POST['nome'] != "") {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     
-    // Monta a linha e salva no txt
+    /
     $linha = $nome . "|" . $email . PHP_EOL;
     file_put_contents('usuarios.txt', $linha, FILE_APPEND);
     
-    // Redireciona para a página de criar pergunta e encerra o script
+    
     header("Location: cadastrar_pergunta.php");
     exit(); 
 }
